@@ -37,3 +37,10 @@ python3 -m http.server 8000
 npx serve .
 ```
 Then open `http://localhost:8000` in your browser.
+
+---
+
+## 🤖 Coding Agent & Maintenance Guide
+
+For AI coding agents or developers working on updating this portal or adding new games:  
+👉 **[Read AGENTS.md](./AGENTS.md)** for architecture details, game deployment scripts, and operational rules.
