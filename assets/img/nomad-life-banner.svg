@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="steppeSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="45%" stop-color="#38bdf8" />
+      <stop offset="70%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#fdba74" />
+    </linearGradient>
+    <linearGradient id="steppeGrass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#65a30d" />
+      <stop offset="40%" stop-color="#4d7c0f" />
+      <stop offset="100%" stop-color="#365314" />
+    </linearGradient>
+    <linearGradient id="yurtGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+  </defs>
+  <!-- Sunrise Sky -->
+  <rect width="800" height="450" fill="url(#steppeSky)"/>
+  <!-- Distant Mountains -->
+  <polygon points="-20,260 120,180 260,260" fill="#0369a1" opacity="0.4"/>
+  <polygon points="180,260 340,150 490,260" fill="#0284c7" opacity="0.35"/>
+  <polygon points="420,260 620,165 790,260" fill="#0369a1" opacity="0.4"/>
+  <!-- Vast Rolling Steppe Grassland -->
+  <path d="M0 250 Q 200 230 400 250 T 800 240 L 800 450 L 0 450 Z" fill="#84cc16" opacity="0.6"/>
+  <path d="M0 280 Q 250 260 500 280 T 800 270 L 800 450 L 0 450 Z" fill="url(#steppeGrass)"/>
+  <!-- Traditional Mongolian Ger (Yurt) -->
+  <g transform="translate(130, 260)">
+    <!-- Base Cylindrical Wall -->
+    <rect x="0" y="45" width="130" height="42" rx="4" fill="url(#yurtGrad)"/>
+    <!-- Conical Roof -->
+    <polygon points="-8,48 65,10 138,48" fill="#f8fafc"/>
+    <!-- Toono (Crown ring) -->
+    <ellipse cx="65" cy="11" rx="16" ry="6" fill="#ea580c"/>
+    <circle cx="65" cy="11" r="5" fill="#fef08a"/>
+    <!-- Door -->
+    <rect x="52" y="55" width="26" height="32" rx="2" fill="#c2410c"/>
+    <!-- Pattern bands around yurt -->
+    <line x1="0" y1="62" x2="130" y2="62" stroke="#ea580c" stroke-width="2.5"/>
+    <line x1="0" y1="74" x2="130" y2="74" stroke="#0284c7" stroke-width="2"/>
+  </g>
+  <!-- Herd Animals (Horses, Camels, Sheep) -->
+  <!-- Wild Horse silhouette galloping -->
+  <g transform="translate(420, 280)">
+    <polygon points="30,30 65,22 80,35 55,42" fill="#78350f"/>
+    <!-- Neck & Head -->
+    <polygon points="60,25 78,8 85,12 72,28" fill="#78350f"/>
+    <!-- Legs in gallop -->
+    <line x1="35" y1="40" x2="18" y2="62" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+    <line x1="42" y1="40" x2="32" y2="64" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+    <line x1="72" y1="36" x2="88" y2="60" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+    <line x1="78" y1="36" x2="98" y2="55" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+    <!-- Mane & Tail -->
+    <path d="M30 30 Q 15 32 10 44" stroke="#451a03" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M68 12 Q 62 18 64 26" stroke="#451a03" stroke-width="3" fill="none"/>
+  </g>
+  <!-- Camel -->
+  <g transform="translate(560, 270)">
+    <!-- Humps & body -->
+    <path d="M10 40 Q 20 22 30 40 Q 45 20 58 40 L 65 48 L 5 48 Z" fill="#b45309"/>
+    <!-- Long neck & Head -->
+    <path d="M55 42 Q 68 35 72 20 L 78 22 L 70 45" fill="#b45309"/>
+    <line x1="15" y1="48" x2="14" y2="78" stroke="#b45309" stroke-width="4.5"/>
+    <line x1="25" y1="48" x2="26" y2="78" stroke="#b45309" stroke-width="4.5"/>
+    <line x1="50" y1="48" x2="48" y2="78" stroke="#b45309" stroke-width="4.5"/>
+    <line x1="60" y1="48" x2="62" y2="78" stroke="#b45309" stroke-width="4.5"/>
+  </g>
+  <!-- Grazing Sheep in distance -->
+  <ellipse cx="320" cy="340" rx="14" ry="10" fill="#f8fafc"/>
+  <ellipse cx="345" cy="350" rx="12" ry="8" fill="#f1f5f9"/>
+  <ellipse cx="375" cy="335" rx="15" ry="10" fill="#ffffff"/>
+  <!-- Title overlay watermark -->
+  <text x="40" y="70" font-family="'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="36" fill="#ffffff" letter-spacing="1">NOMAD LIFE</text>
+  <text x="40" y="100" font-family="'Segoe UI', system-ui, sans-serif" font-weight="600" font-size="16" fill="#e0f2fe">Open World Steppe • Horse Riding • Boids Pastoral Sim</text>
+</svg>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shepherd's Guard</title>
+  <script type="module" crossorigin src="./assets/index-4cE6RsIn.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B7my3jxw.css">
+</head>
+
+<body>
+  <div id="ui">
+    <div id="score-display"
+      style="position: absolute; top: 10px; right: 20px; color: white; font-family: sans-serif; font-size: 24px; font-weight: bold; pointer-events: none; user-select: none;">
+      Score: 0
+    </div>
+    <div id="game-over"
+      style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-family: sans-serif; text-align: center; background: rgba(0,0,0,0.8); padding: 40px; border-radius: 10px; border: 2px solid red;">
+      <h1 style="margin-top: 0; color: red;">GAME OVER</h1>
+      <p>All your sheep are gone!</p>
+      <p style="font-size: 24px;">Final Score: <span id="final-score">0</span></p>
+      <button onclick="location.reload()"
+        style="padding: 10px 20px; font-size: 18px; cursor: pointer; background: white; border: none; border-radius: 5px;">Try
+        Again</button>
+    </div>
+
+    <div id="health-bar"
+      style="display:none; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 200px; height: 20px; background: #333; border: 2px solid white;">
+      <div id="health-fill" style="width: 100%; height: 100%; background: red;"></div>
+    </div>
+    Arrow Keys to Move, Click to Attack
+  </div>
+  </div>
+</body>
+
+</html>

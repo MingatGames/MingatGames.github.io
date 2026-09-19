@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Mingat Games — Official game showcase and indie web game studio. Play immersive 3D games, educational adventures, and action defense games right in your browser.">
+  <meta name="keywords" content="MingatGames, indie games, Three.js, web games, Cozy Cafe 3D, Sparkle Academy, Shepherd's Guard, Nomad Life, Kids Arcade">
+  <meta property="og:title" content="Mingat Games — Playful Web Game Studio">
+  <meta property="og:description" content="Explore and play indie web games developed by Mingat Games right in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mingatgames.github.io/">
+  <meta property="og:image" content="assets/img/mingat-logo.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <title>Mingat Games — Indie Web Games & Interactive Experiences</title>
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Glow & Background Particle Canvas -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="brand-link">
+        <img src="assets/img/mingat-logo.svg" alt="Mingat Games Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">MINGAT<span class="brand-highlight">GAMES</span></span>
+          <span class="brand-subtitle">Indie Game Studio</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#games" class="nav-link active">Games</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#tech" class="nav-link">Tech Stack</a>
+        <a href="https://github.com/MingatGames" target="_blank" rel="noopener noreferrer" class="nav-btn github-nav-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub Org</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>WELCOME TO MINGAT GAMES</span>
+      </div>
+      <h1 class="hero-title">
+        Crafting Playful &amp; Immersive <br>
+        <span class="gradient-text">Web Game Experiences</span>
+      </h1>
+      <p class="hero-description">
+        A passionate collection of 3D indie simulations, tactile educational games, and action defense adventures. Built natively for the modern web with Three.js, Web Audio, and zero friction.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#games" class="btn btn-primary" id="btn-explore-games">
+          <span>🎮 Explore All Games</span>
+        </a>
+        <a href="https://github.com/MingatGames" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          <span>🌟 GitHub Organization</span>
+        </a>
+      </div>
+
+      <!-- Studio Quick Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <span class="stat-number">6+</span>
+          <span class="stat-label">Game Repositories</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Playable in Browser</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <span class="stat-number">3D</span>
+          <span class="stat-label">Three.js &amp; WebGL</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Zero Friction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Games Showcase Section -->
+  <section id="games" class="games-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Featured Games</h2>
+          <p class="section-subtitle">Click any game to launch in-browser or explore the source repository</p>
+        </div>
+        
+        <!-- Search & Filter Toolbar -->
+        <div class="toolbar">
+          <div class="search-box">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="game-search" placeholder="Search games, genre, tech..." autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-pills" id="category-filters">
+        <button class="filter-pill active" data-filter="all">All Games</button>
+        <button class="filter-pill" data-filter="3d">☕ 3D Worlds</button>
+        <button class="filter-pill" data-filter="kids">🍎 Kids &amp; Education</button>
+        <button class="filter-pill" data-filter="action">🐺 Action &amp; Defense</button>
+        <button class="filter-pill" data-filter="simulation">🐎 Simulation</button>
+      </div>
+
+      <!-- Games Grid -->
+      <div class="games-grid" id="games-grid">
+
+        <!-- 1. Cozy Cafe 3D -->
+        <div class="game-card featured" data-category="3d simulation" data-title="Cozy Cafe 3D: Latte the Latte">
+          <div class="card-media">
+            <img src="assets/img/cozy-cafe-banner.png" alt="Cozy Cafe 3D Gameplay" class="card-img" loading="lazy">
+            <span class="card-badge play-badge">✨ Live Playable</span>
+            <div class="card-overlay">
+              <button class="btn-play-quick" data-play-url="games/cozy-cafe/" data-game-title="Cozy Cafe 3D: Latte the Latte">
+                <span class="play-icon">▶</span> Play in Browser
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-genre">3D Barista Sim</span>
+              <span class="tag tag-tech">Three.js</span>
+              <span class="tag tag-tech">Web Audio</span>
+            </div>
+            <h3 class="card-title">Cozy Cafe 3D: Latte the Latte ☕🍒</h3>
+            <p class="card-desc">
+              A charming 3D third-person barista simulation. Play as Latte the Latte, managing orders, pulling espresso shots, blending smoothies, and serving pastries at a cozy, timer-free pace.
+            </p>
+            <div class="card-highlights">
+              <span>🌸 Relaxed Cozy Gameplay</span>
+              <span>🐱 Pet Mocha the Cat</span>
+              <span>🎮 WASD + Touch Controls</span>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-card-play" data-play-url="games/cozy-cafe/" data-game-title="Cozy Cafe 3D: Latte the Latte">
+                ▶ Play Now
+              </button>
+              <a href="https://github.com/MingatGames/cozy-cafe" target="_blank" rel="noopener noreferrer" class="btn btn-card-github" title="View Repository on GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Sparkle Academy -->
+        <div class="game-card featured" data-category="kids educational" data-title="Sparkle Academy: Math & Match Adventure">
+          <div class="card-media">
+            <div class="media-illustration sparkle-theme">
+              <img src="assets/img/sparkle-icon.png" alt="Sparkle Academy Logo" class="sparkle-logo-badge" loading="lazy">
+              <div class="sparkle-stars">✨ 🌟 🐰 🍎 💎</div>
+            </div>
+            <span class="card-badge play-badge">✨ Live Playable</span>
+            <div class="card-overlay">
+              <button class="btn-play-quick" data-play-url="games/sparkle-academy/" data-game-title="Sparkle Academy">
+                <span class="play-icon">▶</span> Play in Browser
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-genre">Kids &amp; Education</span>
+              <span class="tag tag-tech">Canvas 2D</span>
+              <span class="tag tag-tech">Procedural Audio</span>
+            </div>
+            <h3 class="card-title">Sparkle Academy 🌟🐰</h3>
+            <p class="card-desc">
+              A gentle, joyful educational adventure designed for kids (ages 5–7). Feed cute pets, match glowing gems, solve pattern bridges, and pop phonics balloons with zero game-over frustration!
+            </p>
+            <div class="card-highlights">
+              <span>🍎 Fruit Counting &amp; Math</span>
+              <span>🎀 Pet Wardrobe &amp; Stickers</span>
+              <span>🔊 Speech &amp; Phonics Audio</span>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-card-play" data-play-url="games/sparkle-academy/" data-game-title="Sparkle Academy">
+                ▶ Play Now
+              </button>
+              <a href="https://github.com/MingatGames/sparkle-academy" target="_blank" rel="noopener noreferrer" class="btn btn-card-github" title="View Repository on GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Shepherd's Guard (wolf-sheep) -->
+        <div class="game-card" data-category="action 3d" data-title="Shepherd's Guard">
+          <div class="card-media">
+            <img src="assets/img/shepherds-guard-banner.svg" alt="Shepherd's Guard" class="card-img" loading="lazy">
+            <span class="card-badge play-badge">✨ Live Playable</span>
+            <div class="card-overlay">
+              <button class="btn-play-quick" data-play-url="games/wolf-sheep/" data-game-title="Shepherd's Guard">
+                <span class="play-icon">▶</span> Play in Browser
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-genre">Action &amp; Defense</span>
+              <span class="tag tag-tech">Three.js</span>
+              <span class="tag tag-tech">TypeScript</span>
+            </div>
+            <h3 class="card-title">Shepherd's Guard 🐺🛡️</h3>
+            <p class="card-desc">
+              Arcade action defense game. Step into the boots of the Giant Shepherd to protect your flock of 10 sheep from predatory wolves. Swing your wooden axe, defend the pasture, and rack up high scores!
+            </p>
+            <div class="card-highlights">
+              <span>🪓 Melee Axe Combat</span>
+              <span>🐑 Dynamic Sheep Panic AI</span>
+              <span>🏆 Score Survival System</span>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-card-play" data-play-url="games/wolf-sheep/" data-game-title="Shepherd's Guard">
+                ▶ Play Now
+              </button>
+              <a href="https://github.com/MingatGames/wolf-sheep" target="_blank" rel="noopener noreferrer" class="btn btn-card-github" title="View Repository on GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Nomad Life -->
+        <div class="game-card" data-category="simulation 3d" data-title="Nomad Life">
+          <div class="card-media">
+            <img src="assets/img/nomad-life-banner.svg" alt="Nomad Life" class="card-img" loading="lazy">
+            <span class="card-badge play-badge">✨ Live Playable</span>
+            <div class="card-overlay">
+              <button class="btn-play-quick" data-play-url="games/nomad-life/" data-game-title="Nomad Life">
+                <span class="play-icon">▶</span> Play in Browser
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-genre">Open World Sim</span>
+              <span class="tag tag-tech">Three.js</span>
+              <span class="tag tag-tech">Boids AI</span>
+            </div>
+            <h3 class="card-title">Nomad Life 🐎🏕️</h3>
+            <p class="card-desc">
+              Open-world pastoral simulation set in the endless Eurasian steppe. Mount horses, herd diverse flocks of sheep, bulls, camels, and wild horses using boids simulation, and relax near the traditional yurt.
+            </p>
+            <div class="card-highlights">
+              <span>🐎 Horse Riding &amp; Galloping</span>
+              <span>🏕️ Authentic Ger (Yurt) Camp</span>
+              <span>🐂 30-Animal Boids Flock</span>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-card-play" data-play-url="games/nomad-life/" data-game-title="Nomad Life">
+                ▶ Play Now
+              </button>
+              <a href="https://github.com/MingatGames/nomad-life" target="_blank" rel="noopener noreferrer" class="btn btn-card-github" title="View Repository on GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Kids Game Arcade -->
+        <div class="game-card" data-category="kids arcade" data-title="Kids Game Arcade">
+          <div class="card-media">
+            <img src="assets/img/arcade-banner.png" alt="Kids Game Arcade Portal" class="card-img" loading="lazy">
+            <span class="card-badge hub-badge">🌟 Central Portal</span>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-genre">Web Hub &amp; Server</span>
+              <span class="tag tag-tech">Express.js</span>
+              <span class="tag tag-tech">LAN Wi-Fi</span>
+            </div>
+            <h3 class="card-title">Kids Game Arcade 🎮🌈</h3>
+            <p class="card-desc">
+              A unified web portal and lightweight server designed to host, deploy, and launch kid-safe games across home PCs, iPads, and tablets. Includes automated build pipelines and child-friendly UI.
+            </p>
+            <div class="card-highlights">
+              <span>📶 Instant Local Wi-Fi Streaming</span>
+              <span>🛡️ Safe Sandboxed Player Shell</span>
+              <span>🚀 Single-Command Game Deploy</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/MingatGames/kids-game-arcade" target="_blank" rel="noopener noreferrer" class="btn btn-card-play" style="flex:1;">
+                <span>View Portal on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Pet Daycare -->
+        <div class="game-card" data-category="simulation upcoming" data-title="Pet Daycare">
+          <div class="card-media">
+            <img src="assets/img/pet-daycare-banner.svg" alt="Pet Daycare" class="card-img" loading="lazy">
+            <span class="card-badge upcoming-badge">✨ Coming Soon</span>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-genre">Pet Simulation</span>
+              <span class="tag tag-tech">In Active Dev</span>
+            </div>
+            <h3 class="card-title">Pet Daycare 🐶🐱</h3>
+            <p class="card-desc">
+              An upcoming cozy virtual pet care simulation! Nurture puppies, kittens, and bunnies, customize cozy playrooms, prepare healthy meals, and watch happy pets play together.
+            </p>
+            <div class="card-highlights">
+              <span>💖 Gentle Pet Nurturing</span>
+              <span>🎨 Room &amp; Toy Customization</span>
+              <span>🌟 Relaxing Visuals</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/MingatGames/pet-daycare" target="_blank" rel="noopener noreferrer" class="btn btn-card-github" style="width:100%; justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>Follow on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Mingat Games Section -->
+  <section id="about" class="about-section">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-tag">About Studio</span>
+          <h2 class="section-title">Playful, Accessible &amp; Zero Friction</h2>
+          <p>
+            At <strong>Mingat Games</strong>, we believe great games shouldn’t require 50GB downloads, clunky app stores, or invasive telemetry. We build high-craft browser games that start playing immediately on click.
+          </p>
+          <p>
+            Whether it’s a tranquil 3D barista simulation with procedural jazz lofi chords, a gentle educational adventure empowering young learners, or a pastoral steppe survival experience, every Mingat game is crafted with passion for web performance, thoughtful accessibility, and charming aesthetics.
+          </p>
+          <div class="about-points">
+            <div class="point-item">
+              <span class="point-icon">⚡</span>
+              <div>
+                <strong>Instant Playability</strong>
+                <p>Loads in seconds on standard mobile, tablet, or desktop browsers.</p>
+              </div>
+            </div>
+            <div class="point-item">
+              <span class="point-icon">🎵</span>
+              <div>
+                <strong>Procedural Audio</strong>
+                <p>Pure mathematical synthesizers via the Web Audio API with zero bloated MP3s.</p>
+              </div>
+            </div>
+            <div class="point-item">
+              <span class="point-icon">💖</span>
+              <div>
+                <strong>Kid &amp; Family Friendly</strong>
+                <p>No intrusive ads, no dark patterns, and positive reinforcement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <div class="studio-card">
+            <div class="studio-logo-glow">
+              <img src="assets/img/mingat-logo.svg" alt="Mingat Games Logo">
+            </div>
+            <h3>Mingat Games</h3>
+            <p>Eurasian-inspired Indie Game Studio</p>
+            <div class="studio-badges">
+              <span>TypeScript</span>
+              <span>Three.js</span>
+              <span>WebGL</span>
+              <span>Vite</span>
+              <span>Web Audio API</span>
+            </div>
+            <a href="https://github.com/MingatGames" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:20px; width:100%;">
+              Visit GitHub Organization ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Grid -->
+  <section id="tech" class="tech-section">
+    <div class="section-container">
+      <div class="section-header center">
+        <h2 class="section-title">Built With Modern Web Tech</h2>
+        <p class="section-subtitle">Harnessing cutting-edge browser capabilities for native-speed gaming</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-icon">🌐</div>
+          <h4>Three.js &amp; WebGL</h4>
+          <p>Real-time 3D rendering, custom shaders, and lighting running smoothly at 60 FPS.</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon">🎼</div>
+          <h4>Web Audio API</h4>
+          <p>Procedural chord synthesis, sound effects, and spatial audio with zero asset overhead.</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon">⚡</div>
+          <h4>Vite &amp; TypeScript</h4>
+          <p>Instant hot reloading, strict type safety, and optimized tree-shaken static bundles.</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon">📱</div>
+          <h4>Touch &amp; Responsive</h4>
+          <p>Responsive virtual joysticks, pointer lock, and mobile viewport adaptations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/img/mingat-logo.svg" alt="Mingat Games Logo" class="footer-logo">
+          <span>MINGAT GAMES</span>
+        </div>
+        <p class="footer-desc">
+          Official GitHub Organization Portal &amp; Game Showcase.<br>
+          All repositories licensed and hosted on <a href="https://github.com/MingatGames" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        </p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Mingat Games. Built for play.</p>
+        <div class="footer-links">
+          <a href="https://github.com/MingatGames" target="_blank" rel="noopener noreferrer">GitHub Organization</a>
+          <a href="#games">Games</a>
+          <a href="#about">About</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive In-Browser Game Player Overlay -->
+  <div id="game-player-modal" class="game-player-overlay">
+    <div class="player-top-bar">
+      <button id="btn-close-player" class="player-btn-back">
+        <span>⬅</span> Back to Showcase
+      </button>
+      <div class="player-title" id="player-active-title">Playing Game</div>
+      <div class="player-actions">
+        <button id="btn-reload-player" class="player-tool-btn" title="Restart Game">🔄</button>
+        <button id="btn-fullscreen-player" class="player-tool-btn" title="Toggle Fullscreen">⛶</button>
+        <a id="btn-newtab-player" href="#" target="_blank" rel="noopener noreferrer" class="player-tool-btn" title="Open in Dedicated Tab">↗</a>
+      </div>
+    </div>
+    <div class="player-frame-wrapper">
+      <iframe id="game-iframe" src="about:blank" allow="autoplay; fullscreen; keyboard" title="Mingat Games Player Frame"></iframe>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

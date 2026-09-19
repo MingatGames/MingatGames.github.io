@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="daycareBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fed7aa" />
+      <stop offset="50%" stop-color="#fbcfe8" />
+      <stop offset="100%" stop-color="#e9d5ff" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#daycareBg)"/>
+  <!-- Playful circles / confetti in background -->
+  <circle cx="100" cy="120" r="40" fill="#fb7185" opacity="0.2"/>
+  <circle cx="700" cy="90" r="55" fill="#38bdf8" opacity="0.25"/>
+  <circle cx="680" cy="320" r="45" fill="#facc15" opacity="0.2"/>
+  <circle cx="220" cy="380" r="50" fill="#4ade80" opacity="0.2"/>
+  <!-- Cute Puppy Silhouette -->
+  <g transform="translate(260, 200)">
+    <!-- Ears -->
+    <ellipse cx="20" cy="45" rx="15" ry="30" fill="#9a3412" transform="rotate(-20 20 45)"/>
+    <ellipse cx="90" cy="45" rx="15" ry="30" fill="#9a3412" transform="rotate(20 90 45)"/>
+    <!-- Head -->
+    <circle cx="55" cy="65" r="42" fill="#ea580c"/>
+    <ellipse cx="55" cy="80" rx="22" ry="16" fill="#ffedd5"/>
+    <ellipse cx="55" cy="74" rx="8" ry="6" fill="#1e293b"/>
+    <!-- Eyes -->
+    <circle cx="40" cy="60" r="6" fill="#1e293b"/>
+    <circle cx="70" cy="60" r="6" fill="#1e293b"/>
+    <circle cx="42" cy="58" r="2" fill="#fff"/>
+    <circle cx="72" cy="58" r="2" fill="#fff"/>
+    <!-- Body -->
+    <ellipse cx="55" cy="140" rx="36" ry="42" fill="#ea580c"/>
+    <ellipse cx="55" cy="140" rx="22" ry="26" fill="#ffedd5"/>
+    <!-- Paws -->
+    <ellipse cx="38" cy="180" rx="14" ry="10" fill="#ea580c"/>
+    <ellipse cx="72" cy="180" rx="14" ry="10" fill="#ea580c"/>
+  </g>
+  <!-- Cute Kitten Silhouette -->
+  <g transform="translate(430, 215)">
+    <!-- Ears -->
+    <polygon points="15,45 30,10 50,42" fill="#ec4899"/>
+    <polygon points="70,42 90,10 105,45" fill="#ec4899"/>
+    <polygon points="23,40 32,18 45,38" fill="#fbcfe8"/>
+    <polygon points="75,38 88,18 97,40" fill="#fbcfe8"/>
+    <!-- Head -->
+    <circle cx="60" cy="65" r="38" fill="#db2777"/>
+    <!-- Big anime eyes -->
+    <ellipse cx="44" cy="62" rx="7" ry="10" fill="#1e293b"/>
+    <ellipse cx="76" cy="62" rx="7" ry="10" fill="#1e293b"/>
+    <circle cx="46" cy="58" r="3" fill="#fff"/>
+    <circle cx="78" cy="58" r="3" fill="#fff"/>
+    <!-- Nose & Whiskers -->
+    <polygon points="60,74 56,70 64,70" fill="#f43f5e"/>
+    <line x1="30" y1="74" x2="10" y2="70" stroke="#831843" stroke-width="2"/>
+    <line x1="30" y1="78" x2="12" y2="82" stroke="#831843" stroke-width="2"/>
+    <line x1="90" y1="74" x2="110" y2="70" stroke="#831843" stroke-width="2"/>
+    <line x1="90" y1="78" x2="108" y2="82" stroke="#831843" stroke-width="2"/>
+    <!-- Body -->
+    <ellipse cx="60" cy="130" rx="30" ry="34" fill="#db2777"/>
+    <!-- Paws -->
+    <ellipse cx="46" cy="162" rx="12" ry="8" fill="#db2777"/>
+    <ellipse cx="74" cy="162" rx="12" ry="8" fill="#db2777"/>
+  </g>
+  <!-- Floating Hearts & Stars -->
+  <path d="M 230 180 Q 230 170 240 170 Q 250 170 250 180 Q 250 190 240 200 Q 230 190 230 180 Z" fill="#f43f5e"/>
+  <path d="M 550 190 Q 550 178 562 178 Q 574 178 574 190 Q 574 202 562 214 Q 550 202 550 190 Z" fill="#ec4899"/>
+  <!-- Status Badge -->
+  <g transform="translate(300, 110)">
+    <rect x="0" y="0" width="200" height="40" rx="20" fill="rgba(15, 23, 42, 0.75)"/>
+    <text x="100" y="25" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="14" fill="#fde047" text-anchor="middle">✨ COMING SOON</text>
+  </g>
+  <!-- Title overlay -->
+  <text x="40" y="65" font-family="'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="36" fill="#831843" letter-spacing="1">PET DAYCARE</text>
+  <text x="40" y="95" font-family="'Segoe UI', system-ui, sans-serif" font-weight="600" font-size="16" fill="#9d174d">Virtual Pet Care & Nurturing Simulation</text>
+</svg>

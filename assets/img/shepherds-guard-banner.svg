@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#311042" />
+    </linearGradient>
+    <linearGradient id="hills" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#15803d" />
+      <stop offset="100%" stop-color="#14532d" />
+    </linearGradient>
+    <linearGradient id="moonGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#sky)"/>
+  <!-- Stars -->
+  <circle cx="120" cy="80" r="2" fill="#fff" opacity="0.8"/>
+  <circle cx="280" cy="50" r="1.5" fill="#fff" opacity="0.9"/>
+  <circle cx="450" cy="110" r="2" fill="#fff" opacity="0.7"/>
+  <circle cx="680" cy="70" r="1.5" fill="#fff" opacity="0.8"/>
+  <circle cx="720" cy="140" r="2.5" fill="#fff" opacity="0.6"/>
+  <!-- Moon -->
+  <circle cx="640" cy="100" r="45" fill="url(#moonGlow)" opacity="0.9"/>
+  <circle cx="640" cy="100" r="60" fill="#fef08a" opacity="0.15"/>
+  <!-- Rolling Hills -->
+  <path d="M0 320 Q 250 240 500 310 T 800 290 L 800 450 L 0 450 Z" fill="#166534" opacity="0.7"/>
+  <path d="M0 350 Q 200 300 450 360 T 800 340 L 800 450 L 0 450 Z" fill="url(#hills)"/>
+  <!-- Fence Posts -->
+  <g stroke="#78350f" stroke-width="4" stroke-linecap="round">
+    <line x1="80" y1="360" x2="80" y2="400"/>
+    <line x1="140" y1="365" x2="140" y2="405"/>
+    <line x1="200" y1="368" x2="200" y2="410"/>
+    <line x1="70" y1="375" x2="210" y2="385"/>
+    <line x1="70" y1="390" x2="210" y2="400"/>
+  </g>
+  <!-- Low poly sheep -->
+  <g transform="translate(180, 340)">
+    <rect x="0" y="10" width="55" height="38" rx="8" fill="#f8fafc"/>
+    <circle cx="50" cy="20" r="14" fill="#0f172a"/>
+    <circle cx="53" cy="18" r="2" fill="#fff"/>
+    <line x1="12" y1="48" x2="12" y2="60" stroke="#0f172a" stroke-width="5" stroke-linecap="round"/>
+    <line x1="25" y1="48" x2="25" y2="60" stroke="#0f172a" stroke-width="5" stroke-linecap="round"/>
+    <line x1="38" y1="48" x2="38" y2="60" stroke="#0f172a" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(270, 360)">
+    <rect x="0" y="10" width="48" height="32" rx="8" fill="#e2e8f0"/>
+    <circle cx="44" cy="18" r="12" fill="#0f172a"/>
+    <line x1="10" y1="42" x2="10" y2="52" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+    <line x1="34" y1="42" x2="34" y2="52" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <!-- Shepherd Silhouette with Axe -->
+  <g transform="translate(420, 260)">
+    <!-- Axe -->
+    <line x1="20" y1="110" x2="60" y2="30" stroke="#d97706" stroke-width="6" stroke-linecap="round"/>
+    <polygon points="52,38 75,20 82,45 60,52" fill="#94a3b8"/>
+    <!-- Body -->
+    <ellipse cx="20" cy="80" rx="22" ry="36" fill="#b45309"/>
+    <!-- Head & Straw Hat -->
+    <circle cx="20" cy="38" r="16" fill="#fed7aa"/>
+    <path d="M-5 34 Q 20 20 45 34 L 50 32 Q 20 10 -10 32 Z" fill="#eab308"/>
+    <!-- Legs -->
+    <line x1="12" y1="114" x2="10" y2="155" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
+    <line x1="28" y1="114" x2="30" y2="155" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <!-- Wolf with glowing red eyes -->
+  <g transform="translate(600, 330)">
+    <!-- Wolf body -->
+    <polygon points="0,35 45,15 85,25 110,40 85,55 30,55" fill="#334155"/>
+    <!-- Head -->
+    <polygon points="0,35 -25,25 -20,12 5,20" fill="#475569"/>
+    <polygon points="-5,15 -10,0 2,12" fill="#475569"/>
+    <!-- Eye -->
+    <circle cx="-12" cy="22" r="3" fill="#ef4444"/>
+    <!-- Legs -->
+    <line x1="25" y1="52" x2="20" y2="78" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+    <line x1="85" y1="52" x2="90" y2="78" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+    <!-- Tail -->
+    <path d="M108 42 Q 130 50 125 70" fill="none" stroke="#334155" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <!-- Title overlay watermark -->
+  <text x="40" y="70" font-family="'Segoe UI', system-ui, sans-serif" font-weight="900" font-size="34" fill="#ffffff" letter-spacing="1">SHEPHERD'S GUARD</text>
+  <text x="40" y="100" font-family="'Segoe UI', system-ui, sans-serif" font-weight="600" font-size="16" fill="#cbd5e1">Action Defense • Flock Survival • Low-Poly 3D</text>
+</svg>
