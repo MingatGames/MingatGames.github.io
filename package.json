@@ -1,0 +1,21 @@
+{
+  "name": "mingatgames-showcase",
+  "version": "1.0.0",
+  "description": "Official GitHub Pages showcase and game portal for Mingat Games organization",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve .",
+    "deploy:game": "node scripts/deploy-game.js",
+    "deploy:all": "node scripts/deploy-game.js cozy-cafe && node scripts/deploy-game.js sparkle-academy && node scripts/deploy-game.js wolf-sheep && node scripts/deploy-game.js nomad-life"
+  },
+  "keywords": [
+    "games",
+    "github-pages",
+    "showcase",
+    "threejs",
+    "webgl",
+    "mingatgames"
+  ],
+  "author": "Mingat Games",
+  "license": "MIT"
+}
