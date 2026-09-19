@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx serve .",
     "deploy:game": "node scripts/deploy-game.js",
-    "deploy:all": "node scripts/deploy-game.js cozy-cafe && node scripts/deploy-game.js sparkle-academy && node scripts/deploy-game.js wolf-sheep && node scripts/deploy-game.js nomad-life"
+    "deploy:all": "node scripts/deploy-game.js cozy-cafe && node scripts/deploy-game.js sparkle-academy && node scripts/deploy-game.js wolf-sheep && node scripts/deploy-game.js nomad-life && node scripts/deploy-game.js pet-daycare"
   },
   "keywords": [
     "games",
