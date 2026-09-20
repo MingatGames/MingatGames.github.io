@@ -8,33 +8,54 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>Shepherd's Guard: Steppe of the Blue Sky — Mingat Games</title>
-  <script type="module" crossorigin src="./assets/index-DVa0-QNq.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-B_qQoi3G.css">
+  <script type="module" crossorigin src="./assets/index-c7JNPC8S.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BHE59VWt.css">
 </head>
 
 <body>
   <!-- HUD Layer -->
   <div id="hud">
-    <!-- Top Left: Wave & Sheep -->
+    <!-- Top Left: Level, Wave & Sheep -->
     <div class="hud-box top-left">
-      <div id="wave-display" class="hud-pill wave-pill">Wave 1</div>
-      <div id="sheep-count-display" class="hud-pill sheep-pill">🐑 Flock: 12</div>
+      <div id="level-display" class="hud-pill level-pill">Level 1: Spring Awakening</div>
+      <div id="wave-display" class="hud-pill wave-pill">Wave 1/2</div>
+      <div id="sheep-count-display" class="hud-pill sheep-pill">🐑 Flock: 10</div>
     </div>
 
-    <!-- Top Center: Tashuur Crack Cooldown -->
+    <!-- Top Center: Abilities & Boss Health -->
     <div class="hud-box top-center">
-      <div class="whip-meter-container">
-        <div class="whip-meter-label">⚡ Tashuur Crack (Scare)</div>
-        <div class="whip-cooldown-bar">
-          <div id="whip-cooldown-fill"></div>
+      <div class="meters-row">
+        <!-- Tashuur Crack -->
+        <div class="ability-meter-container">
+          <div class="meter-label">⚡ Tashuur Crack (Scare)</div>
+          <div class="cooldown-bar">
+            <div id="whip-cooldown-fill"></div>
+          </div>
+        </div>
+
+        <!-- Shepherd's Whistle -->
+        <div class="ability-meter-container">
+          <div class="meter-label">📢 Whistle (Rally Q)</div>
+          <div class="cooldown-bar">
+            <div id="whistle-cooldown-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Boss Health Bar -->
+      <div id="boss-health-container" class="boss-health-box" style="display: none;">
+        <div class="boss-label">👑 KHÖKH CHONO (Ancient Blue Wolf)</div>
+        <div class="boss-bar">
+          <div id="boss-health-fill" style="width: 100%;"></div>
         </div>
       </div>
     </div>
 
-    <!-- Top Right: Score & Sound -->
+    <!-- Top Right: Score, Levels & Controls -->
     <div class="hud-box top-right">
       <div id="score-display" class="hud-pill score-pill">Score: 0</div>
       <div class="hud-pill high-pill">Best: <span id="high-score-display">0</span></div>
+      <button id="btn-hud-levels" class="hud-btn" title="Level Select">🗺️</button>
       <button id="btn-toggle-touch" class="hud-btn" title="Toggle Touch Controls">🎮</button>
       <button id="btn-mute" class="hud-btn" title="Toggle Sound">🔊</button>
     </div>
@@ -51,6 +72,7 @@
         <div id="joystick-knob"></div>
       </div>
       <div id="touch-buttons">
+        <button id="btn-touch-whistle" class="touch-btn whistle-btn" title="Shepherd's Whistle (Rally)">📢</button>
         <button id="btn-touch-crack" class="touch-btn crack-btn" title="Tashuur Crack (Scare)">⚡</button>
         <button id="btn-touch-strike" class="touch-btn strike-btn" title="Tashuur Strike">💥</button>
       </div>
@@ -62,7 +84,7 @@
     <div class="modal-card">
       <div class="modal-badge">🇲🇳 Mongolian Steppe • Малчны Харуул</div>
       <h1 class="modal-title">Shepherd's Guard</h1>
-      <p class="modal-desc">Beneath the Eternal Blue Sky (<em>Мөнх хөх тэнгэр</em>), hungry wolves are stalking your nomadic flock. Master your trusty <strong>Tashuur whip</strong> to protect the sheep!</p>
+      <p class="modal-desc">Beneath the Eternal Blue Sky (<em>Мөнх хөх тэнгэр</em>), hungry wolves stalk your nomadic flock. Master your trusty <strong>Tashuur whip</strong> and shepherd's call to protect the five jewels of the steppe!</p>
 
       <div class="controls-guide">
         <div class="guide-item">
@@ -76,7 +98,14 @@
           <span class="guide-icon">⚡</span>
           <div class="guide-text">
             <strong>Tashuur Crack (Scare)</strong>
-            <span>Right Click / Shift / E — Loud sonic snap terrifies &amp; scatters the pack</span>
+            <span>Right Click / Shift / E — Sonic snap terrifies &amp; scatters the pack</span>
+          </div>
+        </div>
+        <div class="guide-item">
+          <span class="guide-icon">📢</span>
+          <div class="guide-text">
+            <strong>Shepherd's Whistle</strong>
+            <span>Q Key / Touch — Rallies all scattered sheep towards safety</span>
           </div>
         </div>
         <div class="guide-item">
@@ -88,7 +117,63 @@
         </div>
       </div>
 
-      <button id="btn-start-game" class="btn-primary">▶ Guard the Steppe</button>
+      <div class="modal-actions">
+        <button id="btn-open-levels-start" class="btn-secondary">🗺️ Select Level</button>
+        <button id="btn-start-game" class="btn-primary">▶ Play Campaign</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Level Select Modal -->
+  <div id="level-select-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-card level-select-card">
+      <div class="modal-badge">🇲🇳 Campaigns of the Steppe • Үе Сонгох</div>
+      <h1 class="modal-title">Select Level</h1>
+      <div class="stars-total-pill">⭐ Total Stars: <span id="total-stars-count">0</span> / 18</div>
+      <div id="levels-grid" class="levels-grid">
+        <!-- Generated dynamically -->
+      </div>
+      <div class="modal-actions">
+        <button id="btn-close-levels" class="btn-secondary">Back</button>
+        <button id="btn-start-endless" class="btn-secondary btn-endless">♾️ Endless Steppe</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Level Complete / Victory Modal -->
+  <div id="level-complete-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-card victory-card">
+      <div class="modal-badge badge-success">Victory • Ялалт</div>
+      <h1 id="victory-title" class="modal-title text-success">LEVEL COMPLETE!</h1>
+      <p id="victory-desc" class="modal-desc">The flock was courageously defended beneath the Eternal Blue Sky!</p>
+
+      <div id="victory-stars" class="stars-display">
+        <span class="star-icon" id="star-1">★</span>
+        <span class="star-icon" id="star-2">★</span>
+        <span class="star-icon" id="star-3">★</span>
+      </div>
+      <div id="victory-star-label" class="star-label">Flawless Flock!</div>
+
+      <div class="stats-summary">
+        <div class="stat-box">
+          <span class="stat-label">Sheep Saved</span>
+          <span id="victory-sheep" class="stat-val">10/10</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Level Score</span>
+          <span id="victory-score" class="stat-val">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Wolves Defeated</span>
+          <span id="victory-wolves" class="stat-val">0</span>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="btn-victory-levels" class="btn-secondary">🗺️ Levels</button>
+        <button id="btn-replay-level" class="btn-secondary">🔄 Replay</button>
+        <button id="btn-next-level" class="btn-primary">▶ Next Level</button>
+      </div>
     </div>
   </div>
 
@@ -110,7 +195,10 @@
         </div>
       </div>
 
-      <button id="btn-restart" class="btn-primary">🔄 Try Again</button>
+      <div class="modal-actions">
+        <button id="btn-gameover-levels" class="btn-secondary">🗺️ Select Level</button>
+        <button id="btn-restart" class="btn-primary">🔄 Try Again</button>
+      </div>
     </div>
   </div>
 
