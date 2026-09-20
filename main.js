@@ -151,8 +151,10 @@ function initGamePlayerModal() {
 
   function openGame(url, title) {
     titleEl.textContent = title || 'Playing Game';
-    iframe.src = url;
-    if (btnNewTab) btnNewTab.href = url;
+    const separator = url.includes('?') ? '&' : '?';
+    const freshUrl = `${url}${separator}t=${Date.now()}`;
+    iframe.src = freshUrl;
+    if (btnNewTab) btnNewTab.href = freshUrl;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -183,7 +185,8 @@ function initGamePlayerModal() {
     btnReload.addEventListener('click', () => {
       const current = iframe.src;
       if (current && current !== 'about:blank') {
-        iframe.src = current;
+        const base = current.split('?')[0];
+        iframe.src = `${base}?t=${Date.now()}`;
       }
     });
   }
